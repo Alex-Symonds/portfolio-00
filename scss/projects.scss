@@ -1,0 +1,57 @@
+@use 'variables' as v;
+
+/*
+    Used only on the Projects page.
+    Contents:
+        > language icons
+*/
+
+// Programming language icons
+.lang-icon{
+    min-width: 32px;
+    max-width: 2.5rem;
+    aspect-ratio: 1/1;
+
+    font-size: 0.8rem;
+
+    background-color: v.$c_tone_08;
+    border: 1px solid v.$c_tone_06;
+    border-radius: 0.2rem;
+
+    position: relative;
+    span{
+        position: absolute;
+        top: -999px;
+        left: -999px;
+    }
+}
+.javascript-icon{
+    background-image: url('../images/tech_js.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.html-icon{
+    background-image: url('../images/tech_html.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.css-icon{
+    background-image: url('../images/tech_scss.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.python-icon{
+    background-image: url('../images/tech_python.svg');
+    background-size: 80%;
+    background-position: 50% 4px;
+    background-repeat: no-repeat;
+}
+.django-icon{
+    background-image: url('../images/tech_django.svg');
+    background-size: 65%;
+    background-position: 35% 4px;
+    background-repeat: no-repeat;
+}
