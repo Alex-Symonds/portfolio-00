@@ -310,15 +310,16 @@ body{
         width: 100%;
         max-width: 16rem;
 
-        background-image: url('../images/sketchy-line.svg');
-        background-size: contain;
-        background-position-y: 55%;
-        background-repeat: no-repeat;
-
         h1{
             display: inline;
             font-size: 2rem;
             margin: 0;
+            padding: 0 1.5rem 0.2rem;
+
+            background-image: url('../images/sketchy-line.svg');
+            background-size: contain;
+            background-position-y: bottom;
+            background-repeat: no-repeat;
         }
         .subheading{
             display: inline;
