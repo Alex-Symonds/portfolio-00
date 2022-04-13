@@ -209,6 +209,8 @@ body{
 
 .notepad-body{
     display: flex;
+    flex-direction: column;
+    align-items: center;
 
     background: white;
     border-bottom-left-radius: v.$paper_corner_radius;
@@ -287,14 +289,22 @@ body{
     }
 }
 @media screen and (min-width: 614px){
-    .notepad-body .notepad-body-heading{
-        max-width: 22rem;
-        h1{
-            font-size: 2.5rem;
+    .notepad-body{
+        align-items: flex-end;
+
+        .notepad-body-contents{
+            width: 90%;
         }
-        .subheading{
-            font-size: 2rem;
-        }    
+
+        .notepad-body-heading{
+            max-width: 22rem;
+            h1{
+                font-size: 2.5rem;
+            }
+            .subheading{
+                font-size: 2rem;
+            }    
+        }
     }
 }
 
