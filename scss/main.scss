@@ -162,7 +162,7 @@ body{
             background-size: contain;
             background-repeat: no-repeat;
         }
-        
+
         a{
             color: v.$c_main_text;
             text-decoration: none;
@@ -203,6 +203,7 @@ body{
                     border-bottom-right-radius: 35px/8px;   
                 } 
             }
+        }
     }
 }
 @media screen and (min-width: v.$breakpoint_mainnav_avoid_margin){
@@ -381,7 +382,7 @@ body{
         left: 2px;
         transform: rotate(0.9deg);   
         border-radius: 6px 41px 28px 12px / 51px 5px 16px 52px;  
-    } 
+    }
 }
 
 
@@ -435,4 +436,3 @@ body{
     background-position: 35% 4px;
     background-repeat: no-repeat;
 }
-
