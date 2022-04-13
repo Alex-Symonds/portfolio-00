@@ -37,14 +37,14 @@
             }
         }
 
-        .hit{
-            position: absolute;
-            display: block;
-            width: 35%;
-            height: auto;
+        // .hit{
+        //     position: absolute;
+        //     display: block;
+        //     width: 35%;
+        //     height: auto;
   
-            pointer-events: none;
-        }
+        //     pointer-events: none;
+        // }
 
         .arrow{
             position: absolute;
@@ -90,7 +90,7 @@
 #monster-absence{
     position: absolute;
     left: 0;
-    top: 10%;
+    top: 5%;
 
     width: auto;
 
@@ -103,13 +103,13 @@
         animation-duration: 8s;
     }
 
-    .hit{
-        top: 30%;
-        left: 21%;
-    }
+    // .hit{
+    //     top: 30%;
+    //     left: 21%;
+    // }
 
     .arrow{
-        top: 10%;
+        top: 5%;
         left: 50%;
     }
 
@@ -117,7 +117,7 @@
 #monster-workload{
     position: absolute;
     right: 0;
-    top: 30%;
+    top: 25%;
 
     width: auto;
 
@@ -130,13 +130,13 @@
         animation-duration: 2s;
     }
 
-    .hit{
-        top: 20%;
-        left: 10%;
-    }
+    // .hit{
+    //     top: 20%;
+    //     left: 10%;
+    // }
 
     .arrow{
-        top: 10%;
+        top: 5%;
         left: 35%;
     }
 }
