@@ -61,15 +61,16 @@
     }
 } 
 
-@keyframes sprite-jiggle{
-    0%{transform: rotate(0deg);}
-    25%{transform: rotate(10deg);}
-    50%{transform: rotate(0deg);}
-    75%{transform: rotate(-10deg);}
-    100%{transform: rotate(0deg);}
+@keyframes sprite-absence-hover{
+    0%{transform: scale(100%) rotate(0deg);}
+    20%{transform: scale(95%) rotate(1deg) translateX(-2%);}
+    40%{transform: scale(105%) rotate(3deg);}
+    60%{transform: scale(95%) rotate(-1deg) translateX(2%);}
+    80%{transform: scale(105%) rotate(-3deg);}
+    100%{transform: scale(100%) rotate(0deg);}
 }
 
-@keyframes sprite-dodge{
+@keyframes sprite-workload-hover{
     0%{transform: translateY(0%);}
     10%{transform: translateY(1%);}
     20%{transform: translateY(0%);}
@@ -97,7 +98,7 @@
         width: 35vw;
         max-width: 217px;
 
-        animation-name: sprite-jiggle;
+        animation-name: sprite-absence-hover;
         animation-duration: 8s;
     }
 
@@ -124,7 +125,7 @@
         width: 56vw;
         max-width: 347px;
 
-        animation-name: sprite-dodge;
+        animation-name: sprite-workload-hover;
         animation-duration: 2s;
     }
 
