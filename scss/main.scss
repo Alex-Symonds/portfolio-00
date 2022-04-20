@@ -242,8 +242,8 @@ a{
 
         mix-blend-mode: multiply;
         background: repeating-linear-gradient(
-            white, white calc(3vh - 2px),
-            #9198e5 calc(3vh - 1px), #9198e5 3vh
+            white, white calc(2rem - 2px),
+            #9198e5 calc(2rem - 1px), #9198e5 2rem
         );
 
         pointer-events: none;
@@ -260,7 +260,7 @@ a{
         width: 100%;
         height: 100%;
 
-        padding: 2.5vh 3px 2vh;
+        padding: 1.4rem 3px 1.4rem;
 
         display: flex;
         flex-direction: column;
@@ -292,7 +292,7 @@ a{
         .subheading{
             display: inline;
             font-weight: bold;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin: 0;
 
             color: v.$c_tone_00;
@@ -305,6 +305,7 @@ a{
 
         .notepad-body-contents{
             width: 90%;
+            padding-top: 0.75rem;
         }
 
         .notepad-body-heading{
@@ -313,11 +314,14 @@ a{
                 font-size: 2.5rem;
             }
             .subheading{
-                font-size: 2rem;
+                font-size: 1.7rem;
             }    
         }
     }
 }
+
+
+
 
 // || Shared <a ...> formatting
 .notepad-head-contents nav a,
