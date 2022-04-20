@@ -82,8 +82,8 @@ a{
         The hole-punched div is inside notepad-body, but the positions of the holes should also take into account
         the height of the notepad-head (5rem, at the moment).
         Positioning from bottom only needs to consider the taller page, so it's a simple +33% of head height.
-        Top needs to consider the taller page and the offset caused by the presence of the header. That's +33%
-        for the taller page, -100% for the offset, for a net -66%.
+        Top needs to consider the taller page and the offset caused by the presence of the header. That's +33% head
+        height for the taller page, -100% head height for the offset, for a net -66% of head height.
     */
     .top-hole{         
         top: calc(33% - (5rem / 3 * 2));
@@ -260,7 +260,7 @@ a{
         width: 100%;
         height: 100%;
 
-        padding: 1.4rem 3px 1.4rem;
+        padding: 1.6rem 3px 1.4rem;
 
         display: flex;
         flex-direction: column;
@@ -290,12 +290,14 @@ a{
             background-repeat: no-repeat;
         }
         .subheading{
-            display: inline;
             font-weight: bold;
             font-size: 1.4rem;
             margin: 0;
 
             color: v.$c_tone_00;
+
+            position: relative;
+            bottom: 0.75rem;
         }
     }
 }
@@ -306,6 +308,7 @@ a{
         .notepad-body-contents{
             width: 90%;
             padding-top: 0.75rem;
+            padding-top: 1.25rem;
         }
 
         .notepad-body-heading{
@@ -315,6 +318,7 @@ a{
             }
             .subheading{
                 font-size: 1.7rem;
+                //font-size: 1.3rem;
             }    
         }
     }

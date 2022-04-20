@@ -1,6 +1,9 @@
 @use 'variables' as v;
 
 .doodles{
+    // The doodles combined are roughly a square and it'd be nice for it to fill the page, so set height to the view width.
+    // Since the width is set to 100% of its parent, use min and max to avoid any potential silliness if the screen's
+    // width is waaaay off the view width.
     min-height: 450px;
     height: 100vw;
     max-height: 660px;
