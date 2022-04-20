@@ -5,7 +5,7 @@
     // Since the width is set to 100% of its parent, use min and max to avoid any potential silliness if the screen's
     // width is waaaay off the view width.
     min-height: 450px;
-    height: 100vw;
+    height: 100vh;
     max-height: 660px;
 
     width: 100%;
@@ -14,7 +14,7 @@
     .monster-container{
         position: relative;
         width: 90%;
-        height: 40vh;
+        height: 40%;
         margin: 0 auto 0;
 
         &::after{
@@ -51,9 +51,10 @@
 
         .arrow{
             position: absolute;
+            top: 1.3rem;
             display: block;
     
-            width: 10%;
+            width: 12%;
             height: auto;
         }
     }
@@ -95,7 +96,7 @@
     left: 0;
     top: 5%;
 
-    width: auto;
+   width: auto;
 
     .sprite{
         min-width: 125px;
@@ -112,7 +113,6 @@
     // }
 
     .arrow{
-        top: 5%;
         left: 50%;
     }
 
@@ -139,7 +139,6 @@
     // }
 
     .arrow{
-        top: 5%;
         left: 35%;
     }
 }
@@ -147,7 +146,7 @@
 #player{
     position: absolute;
     left: 6%;
-    bottom: 0;
+    top: 30%;
 
     width: auto;
 
@@ -155,8 +154,8 @@
     align-items: center;
 
     .sprite{
-        min-width: 140px;
-        width: 39vw;
+        min-width: 150px;
+        width: 41vw;
         max-width: 243px;
     }
 
@@ -167,15 +166,22 @@
     }
 
     .arrow{
+        position: relative;
+        left: -5%;
+
         display: block;
-        width: 10%;
+        width: 20%;
+        max-width: 55px;
         height: auto;
-        padding: 10% 2% 0 0;
+        padding: 10% 0 0 0;
     }
 }
 
-@media screen and (min-width: 614px){
+@media screen and (min-width: 510px){
     .doodles{
+        .monster .arrow{
+            top: 1.7rem;
+        }
         .text{
             font-size: 1.3rem;
         }
@@ -187,6 +193,11 @@
 
     #player{
         left: 10%;
+        top: 35%;
+
+        .arrow{
+            left: -3%;
+        }
 
         p{
             padding-top: 5rem;
@@ -194,10 +205,34 @@
     }
 }
 
-@media screen and (min-width: v.$breakpoint_page_size_maxwidth){
+@media screen and (min-width: 614px){
     .doodles{
+        .monster .arrow{
+            top: 1.7rem;
+        }
         .text{
             font-size: 1.3rem;
         }
+        .monster-container{
+            width: 85%;
+            max-width: 491px;
+        }
+    }
+
+    #player{
+        left: 10%;
+        top: 40%;
+
+        p{
+            padding-top: 5rem;
+        }
     }
 }
+
+// @media screen and (min-width: v.$breakpoint_page_size_maxwidth){
+//     .doodles{
+//         .text{
+//             font-size: 1.3rem;
+//         }
+//     }
+// }

@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="20.912666mm"
-   height="31.834667mm"
-   viewBox="0 0 20.912666 31.834668"
+   width="18.965347mm"
+   height="29.859646mm"
+   viewBox="0 0 18.965347 29.859647"
    version="1.1"
    id="svg880"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="player_zap.svg">
+   sodipodi:docname="doodle_player.svg">
   <defs
      id="defs874" />
   <sodipodi:namedview
@@ -24,10 +24,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.2"
-     inkscape:cx="38.399312"
-     inkscape:cy="45.309652"
+     inkscape:cx="35.519312"
+     inkscape:cy="44.057552"
      inkscape:document-units="mm"
-     inkscape:current-layer="g1494"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
@@ -52,7 +52,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-1.931473,-1.8312281)">
+     transform="translate(-2.693473,-2.162513)">
     <g
        id="g1494"
        inkscape:label="player zap"
