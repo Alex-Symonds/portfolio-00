@@ -16,6 +16,8 @@
 */
 
 .projects{
+
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +34,7 @@
 
     width: 100%;
     
-    margin-top: 2.7rem;  // <- HEIGHT ALERT!
+    margin-top: 2.6rem;
     box-sizing: border-box;
     padding: 0.6rem 0.9rem 0.6rem 1rem; // <- HEIGHT ALERT! Also, watch out for the scribbly border lines: need some padding to avoid overlapping those.
 
@@ -78,24 +80,23 @@
 
     h2,
     .subheading{
-        line-height: 2rem;   // <- HEIGHT ALERT!
+        line-height: var(--notepadLineHeight);   // <- HEIGHT ALERT! Very important this matches the line spacing, so multi-line headers maintain line spacing.
     }
 
     h2{
         margin: 0;
-        font-size: 1.9rem;   // <- HEIGHT ALERT!
-        
+        font-size: calc(#{var(--notepadLineHeight)} - 0.1rem);
     }
     .subheading{
         font-weight: bold;
-        margin: 0;
+        margin: 0.2rem 0 0;     // <- HEIGHT ALERT!
     }
 }
 
+
 .project p{
-    //margin: 1.4rem 0 0;    // <- HEIGHT ALERT!
-    margin: 0.5rem 0 2rem;  // <- HEIGHT ALERT! Bottom margin /must/ be the same as line-height.
-    line-height: 2rem;   // <- HEIGHT ALERT!
+    margin: 0.2rem 0 var(--notepadLineHeight);  // <- HEIGHT ALERT!
+    line-height: var(--notepadLineHeight);   // <- HEIGHT ALERT!
     font-size: 1.2rem;
 }
 
@@ -110,10 +111,16 @@
 /*  IMPORTANCE OF THIS MIN-HEIGHT SETTING:
     In single-column mode it's used to prevent the responsive image from pushing everything below "off the lines"
 */
-    min-height: 11.48rem;    //  <- HEIGHT ALERT! 
+    min-height: 11.5rem;    //  <- HEIGHT ALERT! 
+    
 // ---------------------------------------------------------------------------------------------------------------------
 
     img{
+        position: relative;
+        z-index: 3;
+        border-radius: 4px;
+        border: 0.25rem solid white;
+        box-shadow: 0 0 5px 0 rgba(v.$c_tone_00, 50%);
         width: 100%;
     }
 }
@@ -176,27 +183,30 @@
     }
 }
 
-@media screen and (min-width: 334px){ // expand the screenie's container so it pushes the text below to the next line
+@media screen and (min-width: 320px){ // Expand the screenie container so it pushes the text below to the next line
     .screenie-and-icons-container{
-        height: 13.5rem;
+        height: 13.6rem;
+    }
+    .project{
+        margin-top: 2.67rem;
     }
 }
 
 
-@media screen and (min-width: 400px){   
+@media screen and (min-width: 400px){   // Expand links to make better use of available space
     .project a{
         font-size: 1.1rem;
 
         img{
             height: 1.7rem; // <- HEIGHT ALERT!
-            padding: 0.6rem 2vw;
+            padding: 0.6rem 2vw; // <- HEIGHT ALERT! maybe...?
         }
     }
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 500px){   // Expand links further now there's even more space available
     .project{ 
-        margin-top: 1.8rem;
+        margin-top: 3.75rem;
 
         a{
             justify-content: flex-start;
@@ -210,12 +220,18 @@
                 height: auto;
                 padding: 5px;
             }
+
+            #as_logo{
+                width: 4rem;    // the AS logo img is a wide rectangle while GitHub, YouTube and globe are square. This make it come out roughly the same height.
+            }
         
             span{
                 padding: 0.2rem;
             }
         }
     }
+
+
     
     .project-github{
         min-width: 10rem;
@@ -228,13 +244,9 @@
         width: 13rem;
         max-width: 13rem;
     } 
-
-    #as_logo{
-        width: 4rem;    // the AS logo is a wide rectangle while GitHub and YouTube are square. This make it come out roughly the same height.
-    }
 }
 
-@media screen and (min-width: 614px){
+@media screen and (min-width: 614px){   // The heading changes size here, so the start point of .projects must change to accommodate it
     .projects{
         margin-top: 0.6rem;
     }
@@ -253,7 +265,7 @@
         ;
 
         gap: 0.5rem 2%; // <- HEIGHT ALERT!
-        margin-top: 1.4rem; // <- HEIGHT ALERT!
+        margin-top: 3.4rem; // <- HEIGHT ALERT!
     }
     .project header{
         grid-area: proj-header;
@@ -273,12 +285,6 @@
         margin: 0;
     }
 }
-
-
-
-
-
-
 
 
 // || Programming language icons
@@ -301,46 +307,56 @@
     border: 1px solid v.$c_tone_06;
     border-radius: 0.2rem;
 
+    background-position: center center;
+
     position: relative;
     span{
         position: absolute;
         top: -999px;
         left: -999px;
     }
+
+
+    z-index: 3;
 }
 .javascript-icon{
     background-image: url('../images/tech_js.svg');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
 }
 .html-icon{
     background-image: url('../images/tech_html.svg');
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+}
+.scss-icon{
+    background-image: url('../images/tech_scss.svg');
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .css-icon{
-    background-image: url('../images/tech_scss.svg');
+    background-image: url('../images/tech_css.svg');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
 }
 .python-icon{
     background-image: url('../images/tech_python.svg');
     background-size: 80%;
-    background-position: 50% 4px;
     background-repeat: no-repeat;
 }
 .django-icon{
     background-image: url('../images/tech_django.svg');
     background-size: 65%;
-    background-position: 35% 4px;
     background-repeat: no-repeat;
 }
 .react-icon{
     background-image: url('../images/tech_react.svg');
-    background-size: 65%;
-    background-position: 35% 4px;
+    background-size: 98%;
+    background-position: 1px center;
+    background-repeat: no-repeat;
+}
+.flask-icon{
+    background-image: url('../images/tech_flask.svg');
+    background-size: 75%;
     background-repeat: no-repeat;
 }

@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Alex Symonds Portfolio</title>
-        <link href="static/styles/index.css" rel="stylesheet">
+        <title>Alex Symonds Portfolio: Projects</title>
+        <link href="static/styles/main.css" rel="stylesheet">
+        <link href="static/styles/backtomain.css" rel="stylesheet">
+        <link href="static/styles/projects.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
+        <link rem="icon" href="static/images/favicon.svg">
+        <link rel="mask-icon" href="static/images/favicon-mask.svg" color="#000000">
+        <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon-apple-touch.png">
+        <link rel="icon" type="image/x-icon" href="favicon.ico?">
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#ffffff">
+
         <script>
             window.pageId = "projects";
         </script>
     </head>
     <body>
+        <div class="back-to-main-strip">
+            <a href="/#projects">&laquo; return to main site</a>
+        </div>
         <div class="whole-page-container">
 
             <header class="notepad-head">
@@ -33,20 +45,24 @@
                         <article class="project">
                             <header>
                                 <h2>ADMINAS</h2>
-                                <p class="subheading">Sales admin support</p>
+                                <p class="subheading">Manufacturing sales admin support</p>
                             </header>
                             <section class="screenie-and-icons-container">
-                                <img src="static/images/placeholder.png" alt="Screenshot of Adminas" />
+                                <picture>
+                                    <source srcset="static/images/screenie-adminas-290px.png" media="(min-width: 379px)">
+                                    <source srcset="static/images/screenie-adminas-265px.png" media="(min-width: 349px)">
+                                    <img src="static/images/screenie-adminas-235px.png" alt="Screenshot of Adminas" />
+                                </picture>
                                 <div class="lang-icon-strip">
                                     <div class="lang-icon javascript-icon"><span>JavaScript</span></div>
                                     <div class="lang-icon html-icon"><span>HTML5</span></div>
-                                    <div class="lang-icon css-icon"><span>CSS3</span></div>
+                                    <div class="lang-icon scss-icon"><span>SCSS/CSS3</span></div>
                                     <div class="lang-icon python-icon"><span>Python</span></div>
                                     <div class="lang-icon django-icon"><span>Django</span></div>
                                 </div>
                             </section>
                             <p>
-                                Users can input details about the customer and agent; enter purchase order information; enter products; check prices; check appropriate options have been ordered for "modular" items; issue PDF order confirmations and works order cards; manage a todo list of active orders; add comments, which can be highlighted and/or pinned to the todo list; view a list of all orders and apply filters.
+                                Entering the details of a job allows users to: check the prices against price lists and agent-specific deals; check customisable products have a complete and valid specification; issue PDF documents to confirm the order and notify production.
                             </p>
                             <div class="links-container">
                                 <a class="project-github" href="https://github.com/Alex-Symonds/adminas">
@@ -57,10 +73,6 @@
                                     <img id="as_logo" src="static/images/logo-silhouette.svg" height="32px" alt="" />
                                     <span>live demo</span>
                                 </a>
-                                <!-- <a class="project-youtube" href="#">
-                                    <img src="static/images/YouTube_social_white_square_(2017).svg" width="32px" alt="YouTube" />
-                                    <span>view video</span>
-                                </a> -->
                             </div>
                         </article>
 
@@ -68,21 +80,26 @@
 
                         <article class="project">
                             <header>
-                                <h2>PLACEHOLDER</h2>
-                                <p class="subheading">Placeholder</p>
+                                <h2>STARFLEET SECURE COMMS</h2>
+                                <p class="subheading">Simple Twitter-like social network</p>
                             </header>
                             <section class="screenie-and-icons-container">
-                                <img src="static/images/placeholder.png" alt="Screenshot of Adminas" />
+                                <picture>
+                                    <source srcset="static/images/screenie-starfleet-290px.png" media="(min-width: 379px)">
+                                    <source srcset="static/images/screenie-starfleet-265px.png" media="(min-width: 349px)">
+                                    <img src="static/images/screenie-starfleet-235px.png" alt="Screenshot of Starfleet Secure Comms" />
+                                </picture>
                                 <div class="lang-icon-strip">
                                     <div class="lang-icon javascript-icon"><span>JavaScript</span></div>
                                     <div class="lang-icon html-icon"><span>HTML5</span></div>
-                                    <div class="lang-icon css-icon"><span>CSS3</span></div>
+                                    <div class="lang-icon scss-icon"><span>SCSS/CSS3</span></div>
                                     <div class="lang-icon python-icon"><span>Python</span></div>
                                     <div class="lang-icon django-icon"><span>Django</span></div>
+                                    <div class="lang-icon react-icon"><span>React</span></div>
                                 </div>
                             </section>
                             <p>
-                                Blah de blah, yakkety schmakety.
+                                Basic social networking features (add/edit a post, like posts, follow other users, view subsets of posts, pagination of posts) with styling inspired by the computer panels from the 90's Star Trek series.
                             </p>
                             <div class="links-container">
                                 <a class="project-github" href="https://github.com/Alex-Symonds/adminas">
@@ -93,46 +110,72 @@
                                     <img id="as_logo" src="static/images/logo-silhouette.svg" height="32px" alt="" />
                                     <span>live demo</span>
                                 </a>
-                                <!-- <a class="project-youtube" href="#">
-                                    <img src="static/images/YouTube_social_white_square_(2017).svg" width="32px" alt="YouTube" />
-                                    <span>view video</span>
-                                </a> -->
                             </div>
                         </article>
 
                         <article class="project">
                             <header>
-                                <h2>PLACEHOLDER</h2>
-                                <p class="subheading">Placeholder</p>
+                                <h2>PORTFOLIO WEBSITE</h2>
+                                <p class="subheading">Static portfolio website</p>
                             </header>
                             <section class="screenie-and-icons-container">
-                                <img src="static/images/placeholder.png" alt="Screenshot of Adminas" />
+                                <picture>
+                                    <source srcset="static/images/screenie-portfolio-290px.png" media="(min-width: 379px)">
+                                    <source srcset="static/images/screenie-portfolio-265px.png" media="(min-width: 349px)">
+                                    <img src="static/images/screenie-portfolio-235px.png" alt="Screenshot of portfolio site homepage" />
+                                </picture>
                                 <div class="lang-icon-strip">
                                     <div class="lang-icon javascript-icon"><span>JavaScript</span></div>
                                     <div class="lang-icon html-icon"><span>HTML5</span></div>
-                                    <div class="lang-icon css-icon"><span>CSS3</span></div>
-                                    <div class="lang-icon python-icon"><span>Python</span></div>
-                                    <div class="lang-icon django-icon"><span>Django</span></div>
+                                    <div class="lang-icon scss-icon"><span>SCSS/CSS3</span></div>
+                                    <div class="lang-icon react-icon"><span>React</span></div>
                                 </div>
                             </section>
                             <p>
-                                Blah de blah, yakkety schmakety.
+                                Website to showcase some projects. Since I didn't have any suitably moody black and white photos for the hero image, I also learned a bit about working with SVGs. The lined paper background I selected (it made the doodles look doodlier) presented an interesting CSS challenge on pages with more text.
                             </p>
                             <div class="links-container">
                                 <a class="project-github" href="https://github.com/Alex-Symonds/adminas">
                                     <img src="static/images/GitHub-Mark-32px.png" width="32px" height="32px" alt="GitHub" />
                                     <span>view code</span>
                                 </a>
-                                <a class="project-demo" href="#">
-                                    <img id="as_logo" src="static/images/logo-silhouette.svg" height="32px" alt="" />
-                                    <span>live demo</span>
+                                <a class="project-demo" href="/">
+                                    <img src="static/images/globe.svg" height="32px" alt="" />
+                                    <span>you are here!</span>
                                 </a>
-                                <!-- <a class="project-youtube" href="#">
-                                    <img src="static/images/YouTube_social_white_square_(2017).svg" width="32px" alt="YouTube" />
-                                    <span>view video</span>
-                                </a> -->
                             </div>
                         </article>
+
+
+                        <article class="project">
+                            <header>
+                                <h2>INDENTEC.COM</h2>
+                                <p class="subheading">Static website for a small manufacturing business</p>
+                            </header>
+                            <section class="screenie-and-icons-container">
+                                <picture>
+                                    <source srcset="static/images/screenie-indentec-290px.png" media="(min-width: 379px)">
+                                    <source srcset="static/images/screenie-indentec-265px.png" media="(min-width: 349px)">
+                                    <img src="static/images/screenie-indentec-235px.png" alt="Screenshot of indentec.com" />
+                                </picture>
+                                <div class="lang-icon-strip">
+                                    <div class="lang-icon javascript-icon"><span>JavaScript</span></div>
+                                    <div class="lang-icon html-icon"><span>HTML5</span></div>
+                                    <div class="lang-icon css-icon"><span>CSS3</span></div>
+                                </div>
+                            </section>
+                            <p>
+                                In 2010 the client had a rather dated website which urgently needed a refresh. Initially the project consisted of recreating existing pages but with a more modern look (for 2010). Over time it developed into adding new pages and sections, supporting multiple languages and adding a section with some JavaScript calculators.
+                            </p>
+                            <div class="links-container">
+                                <a class="project-demo" href="#">
+                                    <img src="static/images/globe.svg" height="32px" alt="" />
+                                    <span>live website</span>
+                                </a>
+                            </div>
+                        </article>
+
+
 
 
                     </section>
