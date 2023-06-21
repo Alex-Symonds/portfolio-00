@@ -16,6 +16,8 @@
 */
 
 .projects{
+
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +34,6 @@
 
     width: 100%;
     
-    //margin-top: 2.7rem;  // <- HEIGHT ALERT!
     margin-top: 2.6rem;
     box-sizing: border-box;
     padding: 0.6rem 0.9rem 0.6rem 1rem; // <- HEIGHT ALERT! Also, watch out for the scribbly border lines: need some padding to avoid overlapping those.
@@ -79,22 +80,23 @@
 
     h2,
     .subheading{
-        line-height: 2rem;   // <- HEIGHT ALERT! Very important this matches the line spacing, so multi-line headers maintain line spacing.
+        line-height: var(--notepadLineHeight);   // <- HEIGHT ALERT! Very important this matches the line spacing, so multi-line headers maintain line spacing.
     }
 
     h2{
         margin: 0;
-        font-size: 1.9rem;
+        font-size: calc(#{var(--notepadLineHeight)} - 0.1rem);
     }
     .subheading{
         font-weight: bold;
-        margin: 0;
+        margin: 0.2rem 0 0;     // <- HEIGHT ALERT!
     }
 }
 
+
 .project p{
-    margin: 0.4rem 0 2rem;  // <- HEIGHT ALERT! Bottom margin /must/ be the same as line-height.
-    line-height: 2rem;   // <- HEIGHT ALERT!
+    margin: 0.2rem 0 var(--notepadLineHeight);  // <- HEIGHT ALERT!
+    line-height: var(--notepadLineHeight);   // <- HEIGHT ALERT!
     font-size: 1.2rem;
 }
 
@@ -109,7 +111,8 @@
 /*  IMPORTANCE OF THIS MIN-HEIGHT SETTING:
     In single-column mode it's used to prevent the responsive image from pushing everything below "off the lines"
 */
-    min-height: 11.48rem;    //  <- HEIGHT ALERT! 
+    min-height: 11.5rem;    //  <- HEIGHT ALERT! 
+    
 // ---------------------------------------------------------------------------------------------------------------------
 
     img{
@@ -180,7 +183,7 @@
     }
 }
 
-@media screen and (min-width: 325px){ // Expand the screenie container so it pushes the text below to the next line
+@media screen and (min-width: 320px){ // Expand the screenie container so it pushes the text below to the next line
     .screenie-and-icons-container{
         height: 13.6rem;
     }
@@ -196,7 +199,7 @@
 
         img{
             height: 1.7rem; // <- HEIGHT ALERT!
-            padding: 0.6rem 2vw;
+            padding: 0.6rem 2vw; // <- HEIGHT ALERT! maybe...?
         }
     }
 }
@@ -282,12 +285,6 @@
         margin: 0;
     }
 }
-
-
-
-
-
-
 
 
 // || Programming language icons
