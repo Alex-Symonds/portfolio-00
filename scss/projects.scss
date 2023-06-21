@@ -3,10 +3,299 @@
 /*
     Used only on the Projects page.
     Contents:
-        > language icons
+        > Main body
+        > Project boxes
+        > Language icons
+
+    Note:
+    The text inside the "project boxes" should be positioned a little above the lines on the "lined paper": otherwise
+    it becomes very distracting and hard to read.
+    The lines on the paper are defined in terms of rem, so anything and everything that affects the height or positioning
+    of a project box relative to the notepad-body-contents div must also be defined in terms of rem. That way it'll scale 
+    along with the background lines and all will be well.
 */
 
-// Programming language icons
+.projects{
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: 0 2%; // <- HEIGHT ALERT! 0 height, but height nonethless
+    margin-top: 0.7rem;  // <- HEIGHT ALERT!
+}
+
+.project{
+    display: block;
+
+    width: 100%;
+    
+    margin-top: 2.6rem;
+    box-sizing: border-box;
+    padding: 0.6rem 0.9rem 0.6rem 1rem; // <- HEIGHT ALERT! Also, watch out for the scribbly border lines: need some padding to avoid overlapping those.
+
+    position: relative;
+    border: 2px solid v.$c_outlines;
+    border-radius: 5px 40px 30px 10px / 50px 4px 8px 50px;
+
+    // margin-top is used to create space between .project boxes. It is also responsible for maintaining the lining-up relative to other .projects.
+    // Turn this off on the first box so that .projects can have sole responsibility for the overall starting position.
+    &:first-of-type{
+        margin-top: 0;
+    }
+
+    // Apply more borders, to get a scribbly effect
+    &::before, 
+    &::after
+    {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid v.$c_outlines;
+        pointer-events: none;
+    }
+    &::before{
+        top: 1px;
+        left: 0;
+        transform: rotate(-0.8deg); 
+        border-radius: 8px 37px 32px 18px / 55px 7px 5px 42px;  
+    } 
+    &::after{
+        top: 0;
+        left: 2px;
+        transform: rotate(0.9deg);   
+        border-radius: 6px 41px 28px 12px / 51px 5px 16px 52px;
+    }
+
+}
+
+.project header{
+    margin: 0.2rem 0; // <- HEIGHT ALERT!
+
+    h2,
+    .subheading{
+        line-height: var(--notepadLineHeight);   // <- HEIGHT ALERT! Very important this matches the line spacing, so multi-line headers maintain line spacing.
+    }
+
+    h2{
+        margin: 0;
+        font-size: calc(#{var(--notepadLineHeight)} - 0.1rem);
+    }
+    .subheading{
+        font-weight: bold;
+        margin: 0.2rem 0 0;     // <- HEIGHT ALERT!
+    }
+}
+
+
+.project p{
+    margin: 0.2rem 0 var(--notepadLineHeight);  // <- HEIGHT ALERT!
+    line-height: var(--notepadLineHeight);   // <- HEIGHT ALERT!
+    font-size: 1.2rem;
+}
+
+.screenie-and-icons-container{
+    min-width: 235px;
+    width: 100%;
+    max-width: 290px;   // so that it plays nicely on wider screens, where the project boxes expand horizontally
+
+    margin: 0 auto 0;
+
+// ---------------------------------------------------------------------------------------------------------------------
+/*  IMPORTANCE OF THIS MIN-HEIGHT SETTING:
+    In single-column mode it's used to prevent the responsive image from pushing everything below "off the lines"
+*/
+    min-height: 11.5rem;    //  <- HEIGHT ALERT! 
+    
+// ---------------------------------------------------------------------------------------------------------------------
+
+    img{
+        position: relative;
+        z-index: 3;
+        border-radius: 4px;
+        border: 0.25rem solid white;
+        box-shadow: 0 0 5px 0 rgba(v.$c_tone_00, 50%);
+        width: 100%;
+    }
+}
+
+
+.links-container{
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 0.8rem;    // <- HEIGHT ALERT!
+    background-image: url('../images/sketchy-line-black.svg');
+    background-size: 100% 0.35rem;
+    background-position-y: top;
+    background-repeat: no-repeat;
+}
+
+.project a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-width: 6rem;
+    width: 46%;
+    height: 1.3rem; // <- HEIGHT ALERT!
+
+    padding: 0.7rem 0.2rem;  // <- HEIGHT ALERT!
+
+    color: v.$c_main_text;
+    font-size: 1rem;
+
+    text-decoration: none;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    img{
+        padding: 0 0.2rem;
+        height: 1.1rem; // <- HEIGHT ALERT!
+        width: auto;   
+    }
+}
+
+.project-github{
+    max-width: 10rem;
+
+    img{
+        aspect-ratio: 1/1;
+    }
+
+    &:hover{
+        background-image: url('../images/sketch_circle1.svg');
+    }
+}
+
+.project-demo{
+    max-width: 13rem;
+    
+    &:hover{
+        background-image: url('../images/sketch_circle2.svg');
+    }
+}
+
+@media screen and (min-width: 320px){ // Expand the screenie container so it pushes the text below to the next line
+    .screenie-and-icons-container{
+        height: 13.6rem;
+    }
+    .project{
+        margin-top: 2.67rem;
+    }
+}
+
+
+@media screen and (min-width: 400px){   // Expand links to make better use of available space
+    .project a{
+        font-size: 1.1rem;
+
+        img{
+            height: 1.7rem; // <- HEIGHT ALERT!
+            padding: 0.6rem 2vw; // <- HEIGHT ALERT! maybe...?
+        }
+    }
+}
+
+@media screen and (min-width: 500px){   // Expand links further now there's even more space available
+    .project{ 
+        margin-top: 3.75rem;
+
+        a{
+            justify-content: flex-start;
+            align-items: center;
+        
+            padding: 1.15rem 1.1rem; // <- HEIGHT ALERT!
+            font-size: 1.2rem;
+
+            img{
+                width: 2rem;
+                height: auto;
+                padding: 5px;
+            }
+
+            #as_logo{
+                width: 4rem;    // the AS logo img is a wide rectangle while GitHub, YouTube and globe are square. This make it come out roughly the same height.
+            }
+        
+            span{
+                padding: 0.2rem;
+            }
+        }
+    }
+
+
+    
+    .project-github{
+        min-width: 10rem;
+        width: 10rem;
+        max-width: 10rem;
+    }
+    
+    .project-demo{
+        min-width: 13rem;
+        width: 13rem;
+        max-width: 13rem;
+    } 
+}
+
+@media screen and (min-width: 614px){   // The heading changes size here, so the start point of .projects must change to accommodate it
+    .projects{
+        margin-top: 0.6rem;
+    }
+}
+
+
+@media screen and (min-width: v.$breakpoint_project_num_columns){
+    .project{
+        display: grid;
+        grid-template-columns: 38fr 62fr;
+        grid-template-rows: 3.95rem 1fr 4.2rem; // <- HEIGHT ALERT!
+        grid-template-areas: 
+        "proj-header proj-header"
+        "proj-screenie-icons proj-blahblah"
+        "proj-screenie-icons proj-links"
+        ;
+
+        gap: 0.5rem 2%; // <- HEIGHT ALERT!
+        margin-top: 3.4rem; // <- HEIGHT ALERT!
+    }
+    .project header{
+        grid-area: proj-header;
+    }
+    .screenie-and-icons-container{
+        min-height: 14.7rem;    // <- HEIGHT ALERT!
+        grid-area: proj-screenie-icons;
+    }
+    .links-container{
+        grid-area: proj-links;
+    }
+    .project p{
+        grid-area: proj-blahblah;
+        align-self: start;
+
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+// || Programming language icons
+.lang-icon-strip{
+    display: flex;
+    justify-content: flex-start;
+    gap: 4%;
+
+    width: 100%;
+}
+
 .lang-icon{
     min-width: 32px;
     max-width: 2.5rem;
@@ -18,40 +307,56 @@
     border: 1px solid v.$c_tone_06;
     border-radius: 0.2rem;
 
+    background-position: center center;
+
     position: relative;
     span{
         position: absolute;
         top: -999px;
         left: -999px;
     }
+
+
+    z-index: 3;
 }
 .javascript-icon{
     background-image: url('../images/tech_js.svg');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
 }
 .html-icon{
     background-image: url('../images/tech_html.svg');
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+}
+.scss-icon{
+    background-image: url('../images/tech_scss.svg');
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .css-icon{
-    background-image: url('../images/tech_scss.svg');
+    background-image: url('../images/tech_css.svg');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
 }
 .python-icon{
     background-image: url('../images/tech_python.svg');
     background-size: 80%;
-    background-position: 50% 4px;
     background-repeat: no-repeat;
 }
 .django-icon{
     background-image: url('../images/tech_django.svg');
     background-size: 65%;
-    background-position: 35% 4px;
+    background-repeat: no-repeat;
+}
+.react-icon{
+    background-image: url('../images/tech_react.svg');
+    background-size: 98%;
+    background-position: 1px center;
+    background-repeat: no-repeat;
+}
+.flask-icon{
+    background-image: url('../images/tech_flask.svg');
+    background-size: 75%;
     background-repeat: no-repeat;
 }
